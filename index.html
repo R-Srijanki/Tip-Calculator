@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="flex flex-col justify-center items-center font-['Space Mono']">
+
+<img src="/images/logo.svg" alt="logo" class="mt-16 mb-16"> 
+
+<p id="error" class="hidden"></p>
+<section id="box" class="">
+  <section id="box1" class="m-2 w-[300px] h-[300px]">
+    <label for="bill" class="text-gray-600 font-semibold">Bill</label>
+    <div class="flex items-center border hover:border-green-400 hover:cursor-pointer w-full p-1 mt-2 mb-4 rounded divbill focus-within:border-green-500 p-1">
+      <img src="/images/icon-dollar.svg" alt="icon-dollar" class="h-[15px] w-[15px]">
+      <input id="bill" type="number" placeholder="" class="flex-1 hover: cursor-pointer text-cyan-900 font-bold outline-none text-right" min="0">
+    </div>
+    <label for="tip" class="text-gray-600 font-semibold mb-1">Select Tip %</label>
+    <div id="intip" class="mb-4">
+      <button class="but border rounded text-white bg-cyan-900 py-2" value="5">5%</button>
+      <button class="but border rounded text-white bg-cyan-900 py-2" value="10">10%</button>
+      <button class="but border rounded text-white bg-cyan-900 py-2" value="15">15%</button>
+      <button class="but border rounded text-white bg-cyan-900 py-2" value="25">25%</button>
+      <button class="but border rounded text-white bg-cyan-900 py-2" value="50">50%</button>
+      <input type="number" class="font-bold cursor-pointer border rounded text-right placeholder:text-center text-cyan-900 py-2 placeholder-gray-400" id="cust" placeholder="Custom" min="0">
+    </div>  
+    <div class="flex justify-between items-center mb-1">
+    <label for="People" class="text-gray-600 font-semibold">Number of People</label>
+    <span id="peerr" class="text-red-500 text-xs hidden">Can't be zero</span>
+    </div>
+    <div class="flex items-center border w-full rounded focus-within:border-green-500 p-1" id="pdiv"> <img src="/images/icon-person.svg" alt="icon-person" class="h-[15px] w-[15px] mr-2">
+    <input type="number" name="" id="People" min="1" placeholder="0" class="flex-1 font-bold text-cyan-900 outline-none text-right"></div>
+  </section>
+ <section id="box2" class="flex flex-col items-center bg-cyan-900 rounded-lg m-2.5 h-[300px] w-[300px] p-5">
+  
+  <!-- Tip Amount -->
+  <div class="flex justify-between items-center w-[200px] mb-10">
+    <span class="text-white leading-tight">
+      Tip Amount <sub class="text-gray-300 text-xs block -mt-1">/ person</sub>
+    </span>
+    <span id="pertip" class="text-cyan-300 text-2xl font-bold">$0.00</span>
+  </div>
+
+  <!-- Total -->
+  <div class="flex justify-between items-center w-[200px] mb-[100px]">
+    <span class="text-white leading-tight">
+      Total <sub class="text-gray-300 text-xs block -mt-1">/ person</sub> <!--leading-tight → reduces line-height -mt-1 → pulls it up slightly so it doesn’t feel too spaced out.-->
+    </span>
+    <span id="perbill" class="text-cyan-300 text-2xl font-bold">$0.00</span>
+  </div>
+
+  <!-- Reset Button -->
+  <button type="button" id="reset"
+    class="bg-cyan-400 w-[200px] text-green-900 font-semibold rounded-lg py-2 hover:bg-green-500 active:scale-95 transition">
+    RESET
+  </button>
+  
+</section>
+</section>
+
+<footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+  <script src="index.js" defer></script>
+</body>
+</html>
